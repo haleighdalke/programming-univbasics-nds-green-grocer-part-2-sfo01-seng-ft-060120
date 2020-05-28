@@ -25,6 +25,7 @@ def apply_coupons(cart, coupons)
   # return cart
 
 #not using a new cart
+  new_cart = []
   cart.each do |grocery_item|
     coupons.each do |coupon_item|
       if grocery_item[:item] == coupon_item[:item]
@@ -37,7 +38,8 @@ def apply_coupons(cart, coupons)
         }
         grocery_item[:count] -= coupon_item[:num]
 
-        cart.push(discount_item)
+        new_cart.push(discount_item)
+        new_cart.push(grocery_item)
 
         #binding.pry
       end
