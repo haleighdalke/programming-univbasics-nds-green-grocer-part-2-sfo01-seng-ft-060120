@@ -14,7 +14,7 @@ def apply_coupons(cart, coupons)
   # go through every item in cart
     # for every item in coupons,
       # search for it in cart, using find_item_by_name_in_collection(coupon, cart)
-      # if not nil (ie if it exists) 
+      # if not nil (ie if it exists)
         # new_item = {
         #           }
         # cart.push(new_item)
@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
         # continue searching
     # add item in cart to new cart if it doesnt exist
   # return cart
-      
+
   new_cart = []
   cart.each do |item|
 
@@ -36,12 +36,12 @@ def apply_coupons(cart, coupons)
                  :clearance => true,
                  :count => coupon[:num]
                }
-      else 
+      else
 
       end
     end
   end
-  
+
 end
 
 # ------- my tests ---------
