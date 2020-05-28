@@ -81,7 +81,7 @@ def checkout(cart, coupons)
   # some irritated customers
 
   new_cart = consolidate_cart(cart)
-  new_cart = apply_coupons(new_cart)
+  new_cart = apply_coupons(new_cart, coupons)
   new_cart = apply_clearance(new_cart)
 
   total = new_cart.sum do |k, v|
