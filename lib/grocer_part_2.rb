@@ -9,6 +9,39 @@ def apply_coupons(cart, coupons)
     # updating old cart item with dicounted items subtracted from count
   # if it doesnt, move on to next coupon item
   # return updated cart
+
+  # initialize a new cart
+  # go through every item in cart
+    # for every item in coupons,
+      # search for it in cart, using find_item_by_name_in_collection(coupon, cart)
+      # if not nil (ie if it exists) 
+        # new_item = {
+        #           }
+        # cart.push(new_item)
+        #* cart count -= number of coupons applied
+      # else
+        # continue searching
+    # add item in cart to new cart if it doesnt exist
+  # return cart
+      
+  new_cart = []
+  cart.each do |item|
+
+    coupons.each do |coupon|
+      discounted_item = find_item_by_name_in_collection(coupon, cart)
+      if discounted_item != nil #if item exists
+        new_item = {
+                 :item => "#{discounted_item[:item].upcase} W/COUPON",
+                 :price => coupon[:cost] / coupon[:num],
+                 :clearance => true,
+                 :count => coupon[:num]
+               }
+      else 
+
+      end
+    end
+  end
+  
 end
 
 # ------- my tests ---------
