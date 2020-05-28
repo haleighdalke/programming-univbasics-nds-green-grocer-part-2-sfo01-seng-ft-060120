@@ -2,7 +2,12 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
-
+  # take cart
+  # search to see if a coupon applies to any items in cart
+  # if it does, apply coupon by ...
+    # adding a new cart item with discounted prices
+    # updating old cart item with dicounted items subtracted from count
+  # 
 end
 
 # ------- my tests ---------
