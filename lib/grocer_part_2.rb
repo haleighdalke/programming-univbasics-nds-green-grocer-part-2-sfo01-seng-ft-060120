@@ -4,43 +4,25 @@ require 'pry'
 def apply_coupons(cart, coupons)
   new_cart = consolidate_cart(cart)
 
-  coupons.each do |coupon_item|
-    grocery_item = find_item_by_name_in_collection(coupon_item, new_cart)
-    if grocery_item
-      #apply coupon_item
-      discount_item = {
-                :item => "#{grocery_item[:item].upcase} W/COUPON",
-                :price => coupon_item[:cost] / coupon_item[:num],
-                :clearance => true,
-                :count => coupon_item[:num]
-              }
-              grocery_item[:count] -= coupon_item[:num]
 
-              new_cart.push(discount_item)
+  new_cart.each do |grocery_item|
+    coupons.each do |coupon_item|
+
+
+      if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
+
+        discount_item = {
+          :item => "#{grocery_item[:item].upcase} W/COUPON",
+          :price => coupon_item[:cost] / coupon_item[:num],
+          :clearance => true,
+          :count => coupon_item[:num]
+        }
+        grocery_item[:count] -= coupon_item[:num]
+
+        new_cart.push(discount_item)
+      end
     end
-
   end
-
-
-#  new_cart.each do |grocery_item|
-#    coupons.each do |coupon_item|
-#
-#
-#      if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
-
-#        discount_item = {
-#          :item => "#{grocery_item[:item].upcase} W/COUPON",
-#          :price => coupon_item[:cost] / coupon_item[:num],
-#          :clearance => true,
-#          :count => coupon_item[:num]
-#        }
-#        grocery_item[:count] -= coupon_item[:num]
-#
-#        new_cart.push(discount_item)
-#      end
-#
-#    end
-#  end
   new_cart
 end
 
