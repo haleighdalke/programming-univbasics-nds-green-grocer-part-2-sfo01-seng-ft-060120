@@ -7,7 +7,7 @@ def apply_coupons(cart, coupons)
     modified = false
 
     coupons.each do |coupon_item|
-      if grocery_item[:item] == coupon_item[:item]
+      if grocery_item[:item] == coupon_item[:item] && grocery_item[:count] >= coupon_item[:num]
 
         discount_item = {
           :item => "#{grocery_item[:item].upcase} W/COUPON",
