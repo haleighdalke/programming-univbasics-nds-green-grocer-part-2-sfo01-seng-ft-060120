@@ -32,7 +32,7 @@ def apply_coupons(cart, coupons)
         discount_item = {
           :item => "#{grocery_item[:item].upcase} W/COUPON",
           :price => coupon_item[:cost] / coupon_item[:num],
-          :clearance => true,
+          :clearance => grocery_item[:clearance],
           :count => coupon_item[:num]
         }
         grocery_item[:count] -= coupon_item[:num]
