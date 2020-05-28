@@ -5,7 +5,7 @@ def apply_coupons(cart, coupons)
 
 end
 
-# ------- my tests --------
+# ------- my tests ---------
 cart_test = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true},
   {:item => "AVOCADO", :price => 3.00, :clearance => true},
