@@ -84,7 +84,7 @@ def checkout(cart, coupons)
   new_cart = apply_coupons(new_cart)
   new_cart = apply_clearance(new_cart)
 
-  new_cart.sum(init = 0) do |item|
+  new_cart.sum do |item|
 
 
 end
