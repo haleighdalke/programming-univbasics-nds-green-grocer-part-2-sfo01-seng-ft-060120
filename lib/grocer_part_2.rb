@@ -29,10 +29,8 @@ def apply_coupons(cart, coupons)
   new_cart
 end
 
+# takes cart and returns same cart with 20% discount applied to "clearance" items
 def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
   cart.each do |item|
     if item[:clearance]
       item[:price] = item[:price] - item[:price] * 0.2
