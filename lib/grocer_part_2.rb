@@ -1,5 +1,6 @@
 require_relative './part_1_solution.rb'
 
+# takes coupons and cart, returns a new cart with coupons applied
 def apply_coupons(cart, coupons)
   new_cart = []
   cart.each do |grocery_item|
