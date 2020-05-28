@@ -4,11 +4,8 @@ require 'pry'
 def apply_coupons(cart, coupons)
   new_cart = consolidate_cart(cart)
 
-
   new_cart.each do |grocery_item|
     coupons.each do |coupon_item|
-
-
       if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
 
         discount_item = {
@@ -45,6 +42,7 @@ coupons_test = [
   {:item => "CHEESE", :num => 3, :cost => 15.00}
 ]
 
+cart_test = consolidate_cart(cart_test)
 apply_coupons(cart_test, coupons_test)
 
 
