@@ -24,31 +24,26 @@ def apply_coupons(cart, coupons)
     # add item in cart to new cart if it doesnt exist
   # return cart
 
-  new_cart = []
-  cart.each do |item|
-    added = false
-    coupons.each do |coupon|
-      discounted_item = find_item_by_name_in_collection(coupon, cart)
-      if discounted_item != nil #if item exists
-        new_item = {
-                 :item => "#{discounted_item[:item].upcase} W/COUPON",
-                 :price => coupon[:cost] / coupon[:num],
-                 :clearance => true,
-                 :count => coupon[:num]
-               }
-        new_cart.push(new_item)
-
-        discounted_item[:count] -= coupon[:num]
-        new_cart.push(discounted_item)
-        added = true
+  cart.each do |grocery_item|
+    coupons.each do |coupon_item|
+      if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
+  
+        discount_item = {
+          :item => "#{grocery_item[:item].upcase} W/COUPON",
+          :price => coupon_item[:cost] / coupon_item[:num],
+          :clearance => true,
+          :count => coupon_item[:num]
+        }
+        grocery_item[:count] -= coupon_item[:num]
+  
+        cart.push(discount_item)
+  
+        #binding.pry
       end
     end
-
-    if added == false
-      new_cart.push(item)
-    end
   end
-  new_cart
+  #binding.pry
+  cart
 end
 
 # ------- my tests ---------
