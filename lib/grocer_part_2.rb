@@ -84,10 +84,9 @@ def checkout(cart, coupons)
   new_cart = apply_coupons(new_cart, coupons)
   new_cart = apply_clearance(new_cart)
 
-  total = new_cart.sum do |k, v|
-    if k == :price
-      v
-    end
+  total = 0
+  new_cart.each do |item|
+    total += item[:price] * item[:count]
   end
   puts total
 
