@@ -2,29 +2,6 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
-  # take cart
-  # search to see if a coupon applies to any items in cart
-  # if it does, apply coupon by ...
-    # adding a new cart item with discounted prices
-    # updating old cart item with dicounted items subtracted from count
-  # if it doesnt, move on to next coupon item
-  # return updated cart
-
-  # initialize a new cart
-  # go through every item in cart
-    # for every item in coupons,
-      # search for it in cart, using find_item_by_name_in_collection(coupon, cart)
-      # if not nil (ie if it exists)
-        # new_item = {
-        #           }
-        # cart.push(new_item)
-        #* cart count -= number of coupons applied
-      # else
-        # continue searching
-    # add item in cart to new cart if it doesnt exist
-  # return cart
-
-#not using a new cart
   new_cart = []
   cart.each do |grocery_item|
     modified = false
@@ -43,14 +20,12 @@ def apply_coupons(cart, coupons)
         new_cart.push(discount_item)
         new_cart.push(grocery_item)
         modified = true
-        #binding.pry
       end
     end
     if !modified
       new_cart.push(grocery_item)
     end
   end
-  #binding.pry
   new_cart
 end
 
@@ -82,12 +57,6 @@ end
 # apply_coupons(cart_test, coupons_test)
 
 # -------------------------------
-
-
-
-
-
-
 
 def apply_clearance(cart)
   # Consult README for inputs and outputs
