@@ -24,9 +24,10 @@ def apply_coupons(cart, coupons)
     # add item in cart to new cart if it doesnt exist
   # return cart
 
+#not using a new cart
   cart.each do |grocery_item|
     coupons.each do |coupon_item|
-      if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
+      if grocery_item[:item] == coupon_item[:item]
 
         discount_item = {
           :item => "#{grocery_item[:item].upcase} W/COUPON",
