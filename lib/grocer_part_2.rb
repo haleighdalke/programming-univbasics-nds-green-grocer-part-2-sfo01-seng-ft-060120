@@ -7,7 +7,8 @@ def apply_coupons(cart, coupons)
   # if it does, apply coupon by ...
     # adding a new cart item with discounted prices
     # updating old cart item with dicounted items subtracted from count
-  # 
+  # if it doesnt, move on to next coupon item
+  # return updated cart
 end
 
 # ------- my tests ---------
