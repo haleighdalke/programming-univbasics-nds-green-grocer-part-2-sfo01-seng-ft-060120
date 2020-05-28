@@ -27,7 +27,7 @@ def apply_coupons(cart, coupons)
   cart.each do |grocery_item|
     coupons.each do |coupon_item|
       if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
-  
+
         discount_item = {
           :item => "#{grocery_item[:item].upcase} W/COUPON",
           :price => coupon_item[:cost] / coupon_item[:num],
@@ -35,9 +35,9 @@ def apply_coupons(cart, coupons)
           :count => coupon_item[:num]
         }
         grocery_item[:count] -= coupon_item[:num]
-  
+
         cart.push(discount_item)
-  
+
         #binding.pry
       end
     end
