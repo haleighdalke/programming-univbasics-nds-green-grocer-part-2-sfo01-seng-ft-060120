@@ -84,7 +84,11 @@ def checkout(cart, coupons)
   new_cart = apply_coupons(new_cart)
   new_cart = apply_clearance(new_cart)
 
-  new_cart.sum do |item|
+  new_cart.sum do |k, v|
+    if k == :price
+      v
+    end
+  end
 
 
 end
