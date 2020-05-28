@@ -98,29 +98,3 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
 end
-
-
-
-
-  #
-  #
-  # cart.each do |grocery_item|
-  #   coupons.each do |coupon_item|
-  #     if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
-  #
-  #       discount_item = {
-  #         :item => "#{grocery_item[:item].upcase} W/COUPON",
-  #         :price => coupon_item[:cost] / coupon_item[:num],
-  #         :clearance => true,
-  #         :count => coupon_item[:num]
-  #       }
-  #       grocery_item[:count] -= coupon_item[:num]
-  #
-  #       cart.push(discount_item)
-  #
-  #       binding.pry
-  #     end
-  #   end
-  # end
-  # binding.pry
-  # cart
