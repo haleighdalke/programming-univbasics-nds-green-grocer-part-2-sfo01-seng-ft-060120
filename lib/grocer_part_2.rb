@@ -17,9 +17,12 @@ def apply_coupons(cart, coupons)
         grocery_item[:count] -= coupon_item[:num]
 
         new_cart.push(discount_item)
+
+        binding.pry
       end
     end
   end
+  binding.pry
   new_cart
 end
 
