@@ -2,9 +2,8 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
-  new_cart = consolidate_cart(cart)
 
-  new_cart.each do |grocery_item|
+  cart.each do |grocery_item|
     coupons.each do |coupon_item|
       if grocery_item[:item] == coupon_item[:item] && grocery_item[:clearance] == true
 
@@ -16,14 +15,14 @@ def apply_coupons(cart, coupons)
         }
         grocery_item[:count] -= coupon_item[:num]
 
-        new_cart.push(discount_item)
+        cart.push(discount_item)
 
         binding.pry
       end
     end
   end
   binding.pry
-  new_cart
+  cart
 end
 
 cart_test = [
