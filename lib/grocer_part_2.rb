@@ -38,6 +38,7 @@ def apply_clearance(cart)
   end
 end
 
+# Takes robust cart and coupons. Consolodates cart, applies coupons and clearance, and totals the cost of the cart. Applies an extra %10 discount if the total is $100 or more. Returns total.
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
   #
