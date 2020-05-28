@@ -26,7 +26,7 @@ def apply_coupons(cart, coupons)
 
   new_cart = []
   cart.each do |item|
-
+    added = false
     coupons.each do |coupon|
       discounted_item = find_item_by_name_in_collection(coupon, cart)
       if discounted_item != nil #if item exists
@@ -36,12 +36,19 @@ def apply_coupons(cart, coupons)
                  :clearance => true,
                  :count => coupon[:num]
                }
-      else
+        new_cart.push(new_item)
 
+        discounted_item[:count] -= coupon[:num]
+        new_cart.push(discounted_item)
+        added = true
       end
     end
-  end
 
+    if added == false
+      new_cart.push(item)
+    end
+  end
+  new_cart
 end
 
 # ------- my tests ---------
